@@ -1,0 +1,54 @@
+.featurette-divider {
+    margin: 5rem;
+}
+
+.carousel {
+    margin-bottom: 4rem;
+}
+
+.carousel-item {
+    height: 32rem;
+    background-color: #777;
+}
+
+.marketing .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.marketing h2 {
+    font-weight: 400;
+}
+
+.marketing .col-lg-4 p {
+    margin-left: .75rem;
+    margin-right: .75rem;
+}
+
+.marketing h2 {
+    font-weight: 400;
+}
+
+.featurette-image {
+    margin-top: 3rem;
+}
+
+@media (min-width: 62em) {
+    .featurette-heading {
+        margin-top: 7rem;
+    }
+}
+
+@media (min-width: 40em) {
+    .featurette-heading {
+        font-size: 50px;
+    }
+}
+
+.featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -.05rem;
+}
+
+/*# sourceMappingURL=app.css.map */
