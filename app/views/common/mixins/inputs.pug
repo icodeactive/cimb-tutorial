@@ -1,0 +1,14 @@
+mixin label(text, target)
+    label(for='#{target}')&attributes(attributes)
+        if block
+            block
+        else
+            !=text
+
+mixin input(obj)
+    - if (typeof(obj.type) === 'undefined') obj.type = 'text'
+    - if (typeof(obj.placeholder) === 'undefined') obj.placeholder = obj.value
+    - if (typeof(obj.value) === 'undefined') obj.value = obj.placeholder
+    - if (typeof(obj.id) === 'undefined') obj.id = obj.name
+    - if (typeof(obj.name) === 'undefined') obj.name = obj.id
+    input(type='#{obj.type}', placeholder='#{obj.placeholder}', value='#{obj.value}', name='#{obj.name}', id='#{obj.id}')&attributes(attributes)

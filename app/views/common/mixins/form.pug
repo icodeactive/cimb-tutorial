@@ -1,0 +1,12 @@
+mixin form(id, method, action, name)
+    - if (typeof(method) === 'undefined') method = 'post'
+    - if (typeof(action) === 'undefined') action = '#'
+    - if (typeof(name) === 'undefined') name = id
+    form(action=action, method=method, name= name, id=id)&attributes(attributes)
+    block
+
+mixin option(name, value, selected)
+    if (typeof(selected) === 'undefined')
+        option(value=value)&attributes(attributes)= name
+    else
+        option(value=value selected=true)&attributes(attributes)= name

@@ -1,0 +1,15 @@
+- srcImages = 'assets/images/'
+- srcUpload = 'assets/images/upload/'
+
+mixin img(alt, src)
+    - if (typeof(src) === 'undefined') href = 'images/transparent.png'
+    img(src=src, alt=alt)&attributes(attributes)
+
+mixin picture(images, alt, customAttributes)
+    - if (typeof(customAttributes) === 'Object') customAttributes = {}
+    picture&attributes(attributes)
+        each image in images
+            if image.breakpoint
+                source(srcset=image.src, media="(min-width:" + image.breakpoint + "px)")
+            else
+                img(src=image.src, alt=alt)&attributes(customAttributes)
