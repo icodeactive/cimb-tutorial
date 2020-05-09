@@ -1,10 +1,8 @@
 const gulp = require('gulp');
-const deploy = require('gulp-gh-pages');
+const ghPages = require('gulp-gh-pages');
 
-/**
- * Push build to gh-pages
- */
-gulp.task('deploy', function () {
-    return gulp.src("../../htmldoc", {"allowEmpty": true})
-      .pipe(deploy())
-  });
+var options = {
+    remoteUrl: "https://github.com/icodeactive/cimb-tutorial.git",
+    branch: "master"
+}
+gulp.task('deploy', () => gulp.src('../../htmldoc/**/*').pipe(ghPages(options)));
